@@ -6,3 +6,5 @@ requests
 beautifulsoup4
 tldextract
 Pillow
+joblib
+plotly
