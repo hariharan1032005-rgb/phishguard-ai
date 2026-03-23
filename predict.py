@@ -1,34 +1,37 @@
-<<<<<<< HEAD
 import joblib
+import os
 from feature_extraction import extract_features
 
-model = joblib.load("phishguard_model.pkl")
+# 1. Determine the correct model name
+# Check if you named your file 'phishguard_model.pkl' or 'model.pkl' 
+# and update the line below to match!
+MODEL_PATH = "phishguard_model.pkl" 
+
+# Load model safely
+if os.path.exists(MODEL_PATH):
+    model = joblib.load(MODEL_PATH)
+else:
+    # This helps you debug if the file is missing in GitHub
+    model = None
+    print(f"ERROR: {MODEL_PATH} not found!")
 
 def predict_url(url):
-
-    features = extract_features(url)
-
-    prediction = model.predict([features])[0]
-
-    probability = model.predict_proba([features])[0][1]
-
-    return prediction, probability, features
-=======
-import joblib
-from feature_extraction import extract_features
-
-# Load model
-model = joblib.load("model.pkl")   # 🔥 make sure file name matches
-
-def predict_url(url):
+    if model is None:
+        return 0, 0.0, [0, 0, 0, 0, 0, 0]
+        
     try:
+        # Extract features using your custom script
         features = extract_features(url)
 
+        # Get prediction (0 for Legitimate, 1 for Phishing)
         prediction = model.predict([features])[0]
+        
+        # Get the probability of it being phishing (index 1)
         probability = model.predict_proba([features])[0][1]
 
         return prediction, probability, features
 
     except Exception as e:
-        return 0, 0.0, [0,0,0,0,0,0]
->>>>>>> 3292d845d44f5701216bdfb571c1a9aa61eb0d04
+        print(f"Prediction Error: {e}")
+        # Return safe defaults if extraction fails
+        return 0, 0.0, [0, 0, 0, 0, 0, 0]
