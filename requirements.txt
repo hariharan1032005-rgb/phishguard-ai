@@ -1,6 +1,8 @@
 streamlit
 pandas
-plotly
+numpy
+scikit-learn
 requests
-scikit-learn==1.3.0
-joblib
+beautifulsoup4
+tldextract
+Pillow
