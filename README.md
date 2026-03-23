@@ -26,3 +26,12 @@ PhishGuard AI is an intelligent cybersecurity tool that uses **Machine Learning*
 1. Clone the repository:
    ```bash
    git clone [https://github.com/YOUR_USERNAME/PhishGuard-AI.git](https://github.com/YOUR_USERNAME/PhishGuard-AI.git)
+   Install dependencies:
+
+Bash
+pip install -r requirements.txt
+Run the app:
+
+Bash
+streamlit run app.py
+
