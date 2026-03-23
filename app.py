@@ -224,9 +224,20 @@ if os.path.exists("scan_history.csv"):
         p_count = len(data[data["result"]=="Phishing"])
         l_count = len(data[data["result"]=="Legitimate"])
         
-        c1, c2 = st.columns(2)
-        c1.metric("Total Scans", len(data))
-        c2.pie = px.pie(values=[p_count, l_count], names=["Phishing","Legit"], color_discrete_sequence=["red","green"])
-        st.plotly_chart(c2.pie)
+        col1, col2 = st.columns(2)
+        with col1:
+            st.metric("Total Scans", len(data))
+            st.metric("Phishing Detected", p_count)
         
-        st.dataframe(data.tail(10))
+        with col2:
+            # Create the pie chart figure
+            fig_pie = px.pie(
+                values=[p_count, l_count], 
+                names=["Phishing", "Legit"], 
+                color_discrete_sequence=["#ef4444", "#22c55e"],
+                title="Detection Ratio"
+            )
+            st.plotly_chart(fig_pie, use_container_width=True)
+        
+        st.subheader("Recent Activity")
+        st.dataframe(data.tail(10), use_container_width=True)
