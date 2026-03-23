@@ -1,0 +1,3 @@
+phishing-site.com
+fakebank-login.com
+paypal-secure-update.net
