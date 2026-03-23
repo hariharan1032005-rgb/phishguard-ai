@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 url,result
 http:/google.com,Legitimate
 https://paypal-login-secure-update.com,Legitimate
@@ -17,3 +18,24 @@ http://paypa1-login-secure.com,Phishing
 http://paypa1-login-secure.com,Phishing
 http://malware.testing.google.test,Legitimate
 https://github.com,Legitimate
+=======
+url,result
+http:/google.com,Legitimate
+https://paypal-login-secure-update.com,Legitimate
+http://paypal-login-secure-update.com,Phishing
+http://paypa1-login-secure.com,Phishing
+https://google.com,Legitimate
+http://malware.testing.google.test,Legitimate
+https://github.com,Legitimate
+https://github.com,Legitimate
+http://paypa1-login-secure.com,Phishing
+http://paypa1-login-secure.com,Phishing
+https://google.com,Legitimate
+https://google.com,Legitimate
+https://github.com,Legitimate
+http://paypal-login-secure-update.com,Phishing
+http://paypa1-login-secure.com,Phishing
+http://paypa1-login-secure.com,Phishing
+http://malware.testing.google.test,Legitimate
+https://github.com,Legitimate
+>>>>>>> 3292d845d44f5701216bdfb571c1a9aa61eb0d04
