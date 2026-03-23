@@ -1,8 +1,3 @@
-<<<<<<< HEAD
 phishing-site.com
 fakebank-login.com
-=======
-phishing-site.com
-fakebank-login.com
->>>>>>> 3292d845d44f5701216bdfb571c1a9aa61eb0d04
 paypal-secure-update.net
